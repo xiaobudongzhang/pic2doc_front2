@@ -33,43 +33,50 @@ export const constantRouterMap = [
       component: _import('dashboard/index')
     }]
   },
-
   {
-    path: '/example',
+    path: '/project',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: _import('table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: _import('tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
+    title: '页面管理',
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: _import('form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        name: 'projectManage',
+        component: _import('project/index'),
+        meta: { title: '项目管理', icon: 'form' }
+      },
+      {
+        path: 'page',
+        hidden: true,
+        name: 'pageManage',
+        component: _import('page/index'),
+        meta: { title: '页面管理', icon: 'form' }
       }
     ]
   },
-
-  { path: '*', redirect: '/404', hidden: true }
+  {
+    path: '/point',
+    hidden: true,
+    name: 'pointManage',
+    component: _import('point/index'),
+    meta: {
+      title: '点管理',
+      icon: 'form'
+    }
+  },
+  {
+    path: '/preview',
+    hidden: true,
+    name: 'point_preview',
+    component: _import('point/preview'),
+    meta: {
+      title: '点管理预览',
+      icon: 'form'
+    }
+  },
+  { path: '*',
+    redirect: '/404',
+    hidden: true
+  }
 ]
 
 export default new Router({

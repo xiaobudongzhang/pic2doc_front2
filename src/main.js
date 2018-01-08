@@ -7,7 +7,7 @@ import router from './router'
 import store from './store'
 import '@/icons' // icon
 import '@/permission' // 权限
-
+var _ = require('lodash');
 Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false

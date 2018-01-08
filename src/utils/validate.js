@@ -3,8 +3,8 @@
  */
 
 export function isvalidUsername(str) {
-  const valid_map = ['admin', 'editor']
-  return valid_map.indexOf(str.trim()) >= 0
+  const valid_map = '@'
+  return str.trim().indexOf(valid_map) >= 0
 }
 
 /* 合法uri*/
